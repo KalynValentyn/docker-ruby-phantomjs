@@ -15,7 +15,7 @@ RUN apt-get install -y phantomjs
 # Install a C++ Compiler 
 RUN apt-get install -y build-essential libssl-dev
 
-ENV NVM_DIR /root/.nvm/nvm.sh
+ENV NVM_DIR /root/.nvm
 # Install NVM 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash \
     && source $NVM_DIR/nvm.sh
