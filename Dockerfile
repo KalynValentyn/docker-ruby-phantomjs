@@ -11,9 +11,8 @@ RUN apt-get install -y phantomjs
 ### NVM and nodeJS ###
 # Install a C++ Compiler 
 RUN apt-get install -y build-essential libssl-dev
-# Install NVM 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+# Install nodejs 
+RUN apt-get install -y nodejs
 # Add nvm command to bash profile
-ENV source /root/.bashrc
-RUN nvm install stable && nvm use stable
-
+RUN npm install -g n
+RUN n stable
