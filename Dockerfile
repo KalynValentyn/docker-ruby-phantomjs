@@ -15,11 +15,12 @@ RUN apt-get install -y phantomjs
 # Install a C++ Compiler 
 RUN apt-get install -y build-essential libssl-dev
 
-ENV NVM_DIR /root/.nvm
-# Install NVM 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-RUN source ~/.profile
-##    && source $NVM_DIR/nvm.sh
-# Add nvm command to bash profile
-RUN nvm install stable
-RUN nvm usee stable
+ENV NVM_DIR /usr/local/nvm
+ENV NODE_VERSION 5.8.0
+
+# Install nvm with node and npm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash \
+    && source $NVM_DIR/nvm.sh \
+    && nvm install $NODE_VERSION \
+    && nvm alias default $NODE_VERSION \
+    && nvm use default
