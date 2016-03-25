@@ -14,7 +14,7 @@ RUN apt-get install -y build-essential libssl-dev
 # Install NVM 
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
 # Add nvm command to bash profile
-RUN source ~/.profile 
+RUN /bin/bash -c source ~/.profile 
 # Install node stable
 RUN nvm install stable
 # Use latest stable version nodeJS
