@@ -9,8 +9,13 @@ RUN apt-get install -y libpq-dev
 RUN apt-get install -y phantomjs  
 
 ### NVM and nodeJS ###
-RUN apt-get install -y build-essential libssl-dev  # Install a C++ Compiler 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash   # Install NVM 
-RUN source ~/.profile   # Add nvm command to bash profile
-RUN nvm install stable  # Install node stable
-RUN nvm use stable      # Use latest stable version nodeJS
+# Install a C++ Compiler 
+RUN apt-get install -y build-essential libssl-dev
+# Install NVM 
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.31.0/install.sh | bash
+# Add nvm command to bash profile
+RUN source ~/.profile 
+# Install node stable
+RUN nvm install stable
+# Use latest stable version nodeJS
+RUN nvm use stable  
