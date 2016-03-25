@@ -12,8 +12,9 @@ RUN apt-get install -y phantomjs
 # Install a C++ Compiler 
 RUN apt-get install -y build-essential libssl-dev
 # Install NVM 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-ENV PATH $PATH:/root/.rvm/bin/rvm
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | dash
+ENV source /root/.bashrc
+#ENV PATH $PATH:/root/.rvm/bin/rvm
 # Add nvm command to bash profile
 RUN nvm install stable
 RUN nvm usee stable
