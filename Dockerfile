@@ -17,9 +17,8 @@ RUN apt-get install -y build-essential libssl-dev
 
 ENV NVM_DIR /root/.nvm/nvm.sh
 # Install NVM 
-RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
-
-source $NVM_DIR/nvm.sh
+RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash \
+    && source $NVM_DIR/nvm.sh
 # Add nvm command to bash profile
 RUN nvm install stable
 RUN nvm usee stable
