@@ -23,7 +23,8 @@ ENV NODE_VERSION 5.8.0
 
 # Install nvm with node and npm
 RUN cd /usr/local/nvm && curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash \
-    && source /root/.bashrc \
+    && source $NVM_DIR/nvm.sh \
+    && source /.profile
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default 
