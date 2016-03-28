@@ -1,7 +1,8 @@
 FROM lits/rails-nginx-unicorn:ruby-2.3
 
 ### Replace shell with bash so we can source files ###
-RUN rm /bin/sh && ln -s /bin/bash /bin/sh
+RUN rm /bin/sh && ln -s /bin/bash /bin/sh && \
+    sed -i 's/^mesg n$/tty -s \&\& mesg n/g' /root/.profile
 
 ENV PATH $NVM_DIR/bin:/usr/local/rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$PATH
 
