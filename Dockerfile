@@ -31,4 +31,4 @@ ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
 RUN rm /usr/bin/nodejs
-RUN ln -sf /root/.nvm/versions/node/v5.8.0/bin/node /usr/bin/nodejs
+RUN ln -sf $NVM_DIR/.nvm/versions/node/v5.8.0/bin/node /usr/bin/nodejs
