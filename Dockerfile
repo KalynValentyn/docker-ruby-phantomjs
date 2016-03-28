@@ -16,6 +16,7 @@ RUN apt-get install -y phantomjs
 RUN apt-get install -y build-essential libssl-dev
 
 RUN apt-get install -y npm
+RUN mkdir /usr/local/nvm
 
 ENV NVM_DIR /usr/local/nvm
 ENV NODE_VERSION 5.8.0
