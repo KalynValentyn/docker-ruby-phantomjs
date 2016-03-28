@@ -17,12 +17,12 @@ RUN apt-get install -y build-essential libssl-dev
 
 RUN apt-get install -y npm
 
-ENV NVM_DIR /usr/local/nvm
+ENV NVM_DIR /root
 ENV NODE_VERSION 5.8.0
 
 # Install nvm with node and npm
 RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash \
-    && source $NVM_DIR/nvm.sh \
+    && source /root/.bashrc \
     && nvm install $NODE_VERSION \
     && nvm alias default $NODE_VERSION \
     && nvm use default 
@@ -30,5 +30,5 @@ RUN curl https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | b
 ENV NODE_PATH $NVM_DIR/v$NODE_VERSION/lib/node_modules
 ENV PATH      $NVM_DIR/v$NODE_VERSION/bin:$PATH
 
-RUN rm /usr/bin/nodejs
-RUN ln -sf $NVM_DIR/.nvm/versions/node/v5.8.0/bin/node /usr/bin/nodejs
+# RUN rm /usr/bin/nodejs
+# RUN ln -sf $NVM_DIR/.nvm/versions/node/v5.8.0/bin/node /usr/bin/nodejs
