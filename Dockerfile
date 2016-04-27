@@ -53,7 +53,7 @@ RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc
 RUN apt-get update 
 RUN apt-get install -y google-chrome-stable
 
-RUN cd /root/ && wget -N http://chromedriver.storage.googleapis.com/2.10/chromedriver_linux64.zip
+RUN cd /root/ && wget -N http://chromedriver.storage.googleapis.com/2.21/chromedriver_linux64.zip
 RUN unzip /root/chromedriver_linux64.zip -d /root
 RUN chmod +x /root/chromedriver
 RUN mv -f /root/chromedriver /usr/local/share/chromedriver
