@@ -11,6 +11,7 @@ RUN apt-get install -qq -y \
     git                    \
     curl                   \
     build-essential        \
+    rsync                  \
     imagemagick            \
     libpq-dev              \ 
     autoconf               \
