@@ -13,7 +13,7 @@ RUN apt-get install -y build-essential libssl-dev
 
 RUN apt-get install -y npm
 
-RUN npm cache clean -f && npm install -g n && n stable
+RUN npm cache clean -f && npm install -g n && n 5.8.0
 
 RUN sed -i.bak 's/main$/main universe/' /etc/apt/sources.list
 RUN apt-get update
