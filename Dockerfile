@@ -1,5 +1,7 @@
 FROM lits/rails-nginx-unicorn:ruby-2.3
 
+USER root
+
 ### Replace shell with bash so we can source files ###
 RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 
