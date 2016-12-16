@@ -39,16 +39,9 @@ RUN sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc
 RUN apt-get update 
 RUN apt-get install -y google-chrome-stable
 
-RUN cd /root/ && wget -N http://chromedriver.storage.googleapis.com/2.21/chromedriver_linux64.zip
+RUN cd /root/ && wget -N http://chromedriver.storage.googleapis.com/2.26/chromedriver_linux64.zip
 RUN unzip /root/chromedriver_linux64.zip -d /root
 RUN chmod +x /root/chromedriver
 RUN mv -f /root/chromedriver /usr/local/share/chromedriver
 RUN ln -s /usr/local/share/chromedriver /usr/local/bin/chromedriver
 RUN ln -s /usr/local/share/chromedriver /usr/bin/chromedriver
-
-RUN apt-get update \
-      && apt-get install -y sudo \
-      && rm -rf /var/lib/apt/lists/*
-RUN echo "jenkins ALL=NOPASSWD: ALL" >> /etc/sudoers
- 
-USER jenkins
